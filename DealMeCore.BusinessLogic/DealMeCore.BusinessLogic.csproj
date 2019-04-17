@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Brand\**" />
+    <EmbeddedResource Remove="Models\Brand\**" />
+    <None Remove="Models\Brand\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\PostResponseDto.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DealMeCore.DataAccess.DB.EF\DealMeCore.DataAccess.DB.EF.csproj" />
+    <ProjectReference Include="..\DealMeCore.DataAccess.DB\DealMeCore.DataAccess.DB.csproj" />
+    <ProjectReference Include="..\DealMeCore.Domain\DealMeCore.Domain.csproj" />
+    <ProjectReference Include="..\DealMeCore.Validation\DealMeCore.Validation.csproj" />
+  </ItemGroup>
+
+</Project>

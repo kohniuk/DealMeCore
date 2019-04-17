@@ -1,0 +1,623 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DealMeCore.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:DealMeCore.WebApi.Controllers.BaseControllers.BaseApiController">
+            <summary>
+            Base API controller.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Controllers.BaseControllers.BaseApiController.ValidationContext">
+            <summary>
+            The validation context.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.BaseControllers.BaseApiController.InvalidRequest">
+            <summary>
+            Generates Invalid request action result.
+            </summary>
+            <returns>Invalid request action result.</returns>
+        </member>
+        <member name="T:DealMeCore.WebApi.Controllers.BrandsController">
+            <summary>
+            BrandsController.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.BrandsController.#ctor(DealMeCore.BusinessLogic.Services.IBrandService,DealMeCore.DataAccess.Cache.ICacheProvider,DealMeCore.WebApi.Utils.IImageWriter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DealMeCore.WebApi.Controllers.BrandsController" /> class.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.BrandsController.CreateBrand(DealMeCore.WebApi.Models.CreateBrandRequestModel)">
+            <summary>
+            Create brand.
+            </summary>
+            <returns></returns>
+            <response code="201">Brand has been created.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.BrandsController.UpdateBrand(System.Guid,DealMeCore.WebApi.Models.UpdateBrandRequestModel)">
+            <summary>
+            Update brand.
+            </summary>
+            <returns></returns>
+            <response code="200">Brand has been updated.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="404">Brand doesn't exist.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.BrandsController.DeleteBrand(System.Guid)">
+            <summary>
+            Delete brand by id.
+            </summary>
+            <returns></returns>
+            <response code="204">Brand has been deleted.</response>
+            <response code="404">Brand doesn't exist.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.BrandsController.GetBrands(DealMeCore.BusinessLogic.Models.BasePagingDto)">
+            <summary>
+            Get all brands.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+            <response code="200">Response with list of brands.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.BrandsController.GetBrandsPagination(DealMeCore.BusinessLogic.Models.BasePagingDto)">
+            <summary>
+            Get all pagination brands.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+            <response code="200">Response with list of brands.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.BrandsController.GetBrand(System.Guid)">
+            <summary>
+            Gets brand by identifier.
+            </summary>
+            <param name="brandId"></param>
+            <returns></returns>
+            <response code="200">Response with brand.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="404">Brand doesn't exist.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="T:DealMeCore.WebApi.Controllers.DealsController">
+            <summary>
+            DealsController.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.DealsController.#ctor(DealMeCore.BusinessLogic.Services.IDealService,DealMeCore.WebApi.Utils.IImageWriter)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DealMeCore.WebApi.Controllers.DealsController" /> class.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.DealsController.CreateDeal(DealMeCore.WebApi.Models.CreateDealRequestModel)">
+            <summary>
+            Create deal.
+            </summary>
+            <returns></returns>
+            <response code="201">Deal has been created.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.DealsController.UpdateDeal(System.Guid,DealMeCore.WebApi.Models.UpdateDealRequestModel)">
+            <summary>
+            Update deal.
+            </summary>
+            <returns></returns>
+            <response code="200">Deal has been updated.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="404">Deal doesn't exist.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.DealsController.DeleteDeal(System.Guid)">
+            <summary>
+            Delete deal by id.
+            </summary>
+            <returns></returns>
+            <response code="204">Deal has been deleted.</response>
+            <response code="404">Deal doesn't exist.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.DealsController.GetDealsPagination(DealMeCore.BusinessLogic.Models.BasePagingDto)">
+            <summary>
+            Get all pagination deals.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+            <response code="200">Response with list of deals.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.DealsController.GetNearestDeals(DealMeCore.BusinessLogic.Models.SearchDealsRequestDto)">
+            <summary>
+            Get all nearest deals.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+            <response code="200">Response with list of deals.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.DealsController.GetDeal(System.Guid)">
+            <summary>
+            Get deals by identifier.
+            </summary>
+            <param name="dealId"></param>
+            <returns></returns>
+            <response code="200">Response with deal.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="404">Deal doesn't exist.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="T:DealMeCore.WebApi.Controllers.StoresController">
+            <summary>
+            StroesController. 
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.StoresController.#ctor(DealMeCore.BusinessLogic.Services.IStoreService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DealMeCore.WebApi.Controllers.StoresController" /> class.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.StoresController.CreateStore(DealMeCore.WebApi.Models.CreateStoreRequestModel)">
+            <summary>
+            Create store.
+            </summary>
+            <returns></returns>
+            <response code="201">Store has been created.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.StoresController.UpdateStore(System.Guid,DealMeCore.WebApi.Models.UpdateStoreRequestModel)">
+            <summary>
+            Update store.
+            </summary>
+            <returns></returns>
+            <response code="200">Store has been updated.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="404">Store doesn't exist.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.StoresController.DeleteStore(System.Guid)">
+            <summary>
+            Delete store by id.
+            </summary>
+            <returns></returns>
+            <response code="204">Store has been deleted.</response>
+            <response code="404">Store doesn't exist.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.StoresController.GetStores(DealMeCore.BusinessLogic.Models.BasePagingDto)">
+            <summary>
+            Get all stores.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+            <response code="200">Response with list of stores.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="M:DealMeCore.WebApi.Controllers.StoresController.GetStore(System.Guid)">
+            <summary>
+            Get store by identifier.
+            </summary>
+            <param name="storeId"></param>
+            <returns></returns>
+            <response code="200">Response with store.</response>
+            <response code="400">Invalid parameters.</response>
+            <response code="404">Store doesn't exist.</response>
+            <response code="500">Internal server error.</response>
+        </member>
+        <member name="T:DealMeCore.WebApi.Middlewares.ExceptionMiddleware">
+            <summary>
+            ExceptionMiddleware.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Middlewares.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.AspNetCore.Hosting.IHostingEnvironment,DealMeCore.Logging.ILogger{DealMeCore.WebApi.Middlewares.ExceptionMiddleware})">
+            <summary>
+            Initializes a new instance of the <see cref="T:DealMeCore.WebApi.Middlewares.ExceptionMiddleware" /> class.
+            </summary>
+            <param name="next">The next.</param>
+            <param name="env">The env.</param>
+            <param name="logger">The logger.</param>
+            <exception cref="T:System.ArgumentNullException">next
+            or
+            loggerFactory</exception>
+        </member>
+        <member name="M:DealMeCore.WebApi.Middlewares.ExceptionMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invokes middleware.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:DealMeCore.WebApi.Models.CreateBrandRequestModel">
+            <summary>
+            CreateBrandRequestModel.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateBrandRequestModel.Name">
+            <summary>
+            Name of brand.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateBrandRequestModel.Description">
+            <summary>
+            Description of brand.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateBrandRequestModel.Image">
+            <summary>
+            Image of brand.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateBrandRequestModel.Url">
+            <summary>
+            Brand's URL.
+            </summary>
+        </member>
+        <member name="T:DealMeCore.WebApi.Models.CreateDealRequestModel">
+            <summary>
+            CreateDealRequestModel.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.BrandId">
+            <summary>
+            Brand Id.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.Name">
+            <summary>
+            Name of Deal.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.Currency">
+            <summary>
+            Currency.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.OriginalPrice">
+            <summary>
+            Original price of deal.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.Price">
+            <summary>
+            Current deal price.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.DealValidFrom">
+            <summary>
+            Deal valid from.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.DealValidTo">
+            <summary>
+            Deal valid to.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.MarketUrl">
+            <summary>
+            Market URL.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.BuyNowUrl">
+            <summary>
+            Buy now URL
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.Gender">
+            <summary>
+            Gender.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.DealType">
+            <summary>
+            Type of deal.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.CouponCode">
+            <summary>
+            Coupon code
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateDealRequestModel.Images">
+            <summary>
+            Deal images
+            </summary>
+        </member>
+        <member name="T:DealMeCore.WebApi.Models.CreateStoreRequestModel">
+            <summary>
+            CreateStoreRequestModel.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateStoreRequestModel.Name">
+            <summary>
+            Strore name.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateStoreRequestModel.Description">
+            <summary>
+            Store description.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateStoreRequestModel.Address">
+            <summary>
+            Store address.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateStoreRequestModel.Latitude">
+            <summary>
+            Latitude.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateStoreRequestModel.Longitude">
+            <summary>
+            Longitude.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.CreateStoreRequestModel.BrandId">
+            <summary>
+            Brand Id.
+            </summary>
+        </member>
+        <member name="T:DealMeCore.WebApi.Models.Enums.ImageFormat">
+            <summary>
+            Image format.
+            </summary>
+        </member>
+        <member name="T:DealMeCore.WebApi.Models.UpdateBrandRequestModel">
+            <summary>
+            UpdateBrandRequestModel
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateBrandRequestModel.Name">
+            <summary>
+            Name of brand.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateBrandRequestModel.Description">
+            <summary>
+            Description of brand.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateBrandRequestModel.Disabled">
+            <summary>
+            Determine is disabled brand.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateBrandRequestModel.Image">
+            <summary>
+            Image of brand.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateBrandRequestModel.Url">
+            <summary>
+            Brand's URL.
+            </summary>
+        </member>
+        <member name="T:DealMeCore.WebApi.Models.UpdateDealRequestModel">
+            <summary>
+            UpdateDealRequestModel.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.BrandId">
+            <summary>
+            Brand Id.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.Name">
+            <summary>
+            Name of Deal.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.Currency">
+            <summary>
+            Currency.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.OriginalPrice">
+            <summary>
+            Original price of deal.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.Price">
+            <summary>
+            Current deal price.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.DealValidFrom">
+            <summary>
+            Deal valid from.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.DealValidTo">
+            <summary>
+            Deal valid to.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.MarketUrl">
+            <summary>
+            Market URL.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.BuyNowUrl">
+            <summary>
+            Buy now URL
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.Gender">
+            <summary>
+            Gender.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.DealType">
+            <summary>
+            Type of deal.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.CouponCode">
+            <summary>
+            Coupon code
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.IsActive">
+            <summary>
+            Is active deal.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateDealRequestModel.Images">
+            <summary>
+            Deal images
+            </summary>
+        </member>
+        <member name="T:DealMeCore.WebApi.Models.UpdateStoreRequestModel">
+            <summary>
+            UpdateStoreRequestModel.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateStoreRequestModel.Name">
+            <summary>
+            Strore name.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateStoreRequestModel.Description">
+            <summary>
+            Store description.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateStoreRequestModel.Address">
+            <summary>
+            Store address.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateStoreRequestModel.IsDisabled">
+            <summary>
+            Determine is disabled store.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateStoreRequestModel.Latitude">
+            <summary>
+            Latitude.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateStoreRequestModel.Longitude">
+            <summary>
+            Longitude.
+            </summary>
+        </member>
+        <member name="P:DealMeCore.WebApi.Models.UpdateStoreRequestModel.BrandId">
+            <summary>
+            Brand Id.
+            </summary>
+        </member>
+        <member name="T:DealMeCore.WebApi.Program">
+            <summary>
+            Program.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Program.Main(System.String[])">
+            <summary>
+            The main entry point.
+            </summary>
+            <param name="args">Array of arguments.</param>
+        </member>
+        <member name="M:DealMeCore.WebApi.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Create web host builder.
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DealMeCore.WebApi.Startup">
+            <summary>
+            Startup class.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Startup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DealMeCore.WebApi.Startup"/> class.
+            </summary>
+            <param name="env">The hosting environment.</param>
+        </member>
+        <member name="P:DealMeCore.WebApi.Startup.Configuration">
+            <summary>
+            The configuration.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940/
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:DealMeCore.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="loggerFactory"></param>
+        </member>
+        <member name="T:DealMeCore.WebApi.Utils.ByteArrayExtensions">
+            <summary>
+            Extensions for ByteArray.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Utils.ByteArrayExtensions.GetImageFormat(System.Byte[])">
+            <summary>
+            Get Image format.
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DealMeCore.WebApi.Utils.IImageWriter">
+            <summary>
+            IImageWriter.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Utils.IImageWriter.UploadImage(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload Image 
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DealMeCore.WebApi.Utils.ImageWriter">
+            <summary>
+            ImageWriter.
+            </summary>
+        </member>
+        <member name="M:DealMeCore.WebApi.Utils.ImageWriter.UploadImage(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload Image 
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DealMeCore.WebApi.Utils.ImageWriter.CheckIfImageFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Method to check if file is image file
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DealMeCore.WebApi.Utils.ImageWriter.WriteFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Method to write file onto the disk
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
