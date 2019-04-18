@@ -9,6 +9,7 @@ using DealMeCore.DB.Infrastructure;
 using DealMeCore.Logging.NLog;
 using DealMeCore.Validation;
 using DealMeCore.WebApi.Middlewares;
+using DealMeCore.WebApi.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -22,7 +23,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.IO;
 using System.Reflection;
-using DealMeCore.WebApi.Utils;
+using ValidationContext = DealMeCore.Validation.ValidationContext;
 
 namespace DealMeCore.WebApi
 {
@@ -112,6 +113,7 @@ namespace DealMeCore.WebApi
             services.AddScoped(typeof(IBrandService), typeof(BrandService));
             services.AddScoped(typeof(IDealService), typeof(DealService));
             services.AddScoped(typeof(IStoreService), typeof(StoreService));
+            services.AddScoped(typeof(IValidationContext), typeof(ValidationContext));
             services.AddScoped(typeof(ICacheProvider), typeof(StackExchangeRedisCacheProvider));
             services.AddTransient(typeof(IImageWriter), typeof(ImageWriter));
         }
